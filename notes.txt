@@ -1,0 +1,15 @@
+Since this is my first hands on experience with docker, this is my personal notes for debugging purposes:
+
+curl -H "x-pretest: valid-token" http://localhost:8080
+
+auth-1   | [2025-05-15 02:09:37,570] INFO in auth: Processing request to /auth
+auth-1   | [2025-05-15 02:09:37,570] INFO in auth: Auth successful with token: valid-token
+nginx-1  | 172.18.0.1 - - [15/May/2025:02:09:37 +0000] "GET / HTTP/1.1" 200 24 "-" "curl/8.12.1" "-"
+auth-1   | 172.18.0.3 - - [15/May/2025 02:09:37] "GET /auth HTTP/1.0" 200 -
+auth-1   | 172.18.0.3 - - [15/May/2025 02:09:37] "GET /health HTTP/1.0" 200 -
+
+curl -H "x-pretest: wrong-token" http://localhost:8080 or curl http://localhost:8080
+auth-1   | [2025-05-15 02:11:24,555] INFO in auth: Processing request to /auth
+auth-1   | [2025-05-15 02:11:24,555] WARNING in auth: Auth failed with token: wrong-token
+nginx-1  | 172.18.0.1 - - [15/May/2025:02:11:24 +0000] "GET / HTTP/1.1" 401 59 "-" "curl/8.12.1" "-"
+auth-1   | 172.18.0.3 - - [15/May/2025 02:11:24] "GET /auth HTTP/1.0" 401 -
