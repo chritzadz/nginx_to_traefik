@@ -20,4 +20,7 @@ minikube status
 minikube get nodes
 
 steps:
-1. move from docker-compose to K8 cluster.
+1. move from docker-compose to K8 cluster
+    - auth_pod
+    - nginx_pod
+
