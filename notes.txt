@@ -13,3 +13,11 @@ auth-1   | [2025-05-15 02:11:24,555] INFO in auth: Processing request to /auth
 auth-1   | [2025-05-15 02:11:24,555] WARNING in auth: Auth failed with token: wrong-token
 nginx-1  | 172.18.0.1 - - [15/May/2025:02:11:24 +0000] "GET / HTTP/1.1" 401 59 "-" "curl/8.12.1" "-"
 auth-1   | 172.18.0.3 - - [15/May/2025 02:11:24] "GET /auth HTTP/1.0" 401 -
+
+
+some important commands:
+minikube status
+minikube get nodes
+
+steps:
+1. move from docker-compose to K8 cluster.
