@@ -23,4 +23,7 @@ steps:
 1. move from docker-compose to K8 cluster
     - auth_pod
     - nginx_pod
+2. to access it would be http://minikube_ip:nginx_port
+
+
 

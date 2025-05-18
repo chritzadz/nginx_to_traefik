@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: traefik-config
+data:
+  traefik.yml: |
+    entryPoints:
+      web:
+        address: ":80"
+      websecure:
+        address: ":443"
+      traefik:
+        address: ":8080"
+
+    api:
+      dashboard: true
+      insecure: true
+
+    log:
+      level: DEBUG
