@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment-ipcluster
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-ipcluster
+  template:
+    metadata:
+      labels:
+        app: nginx-ipcluster
+    spec:
+      containers:
+      - name: nginx
+        image: chritzadz/nginx:v0.0.2
