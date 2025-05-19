@@ -21,9 +21,12 @@ minikube get nodes
 
 steps:
 1. move from docker-compose to K8 cluster
-    - auth_pod
-    - nginx_pod
-2. to access it would be http://minikube_ip:nginx_port
+    - auth_deployment
+    - nginx_deployment
+2. using Ingress CRD forward to appropriate services
+3. port-forward traefik services externally -> kubectl port-forward -n traefik pod/traefik 8001:8000
+
+port 8000 is used for 
 
 
 
