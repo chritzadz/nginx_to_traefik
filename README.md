@@ -56,10 +56,10 @@ kubectl create -f k8s/
 Making sure that all deployments and services runs successfully.
 ```bash
 kubectl port-forward svc/traefik 8001:80 #for accessing the services via http
-kubectl port-forward traefik-84d97bf45b-pxlk4 8081:8080 #accessing traefik dashboard
+kubectl port-forward <traefik-pod-with-hash> 8081:8080 #accessing traefik dashboard
 ```
 
-all can be access by http://localhost:port via web browser
+all can be access by http://localhost:port via web browser (use incognito presumably to avoid caching by browser)
 
 Or to test the auth service manually run using
 ```bash
