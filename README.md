@@ -4,11 +4,11 @@ A demo project that replicates the [`nginx-auth-request`](https://github.com/ric
 
 
 ## Project Structure
-├── auth/ # Flask-based token validation service
-├── nginx/ # Nginx app route request to auth
-├── traefik/ # Traefik Helm chart
-├── webui/ # Simple frontend with form to test auth
-├── k8s/ # all k8s components
+- auth/ # Flask-based token validation service
+- nginx/ # Nginx app route request to auth
+- traefik/ # Traefik Helm chart
+- webui/ # Simple frontend with form to test auth
+- k8s/ # all k8s components
 
 ## Prerequisites
 - Docker v27.5.1 installed and running
@@ -61,7 +61,7 @@ kubectl port-forward traefik-84d97bf45b-pxlk4 8081:8080 #accessing traefik dashb
 
 all can be access by http://localhost:port via web browser
 
-Or to testthe auth service manually run using
+Or to test the auth service manually run using
 ```bash
 curl -H "x-pretest: valid-token" http://localhost:8001/auth
 ```
