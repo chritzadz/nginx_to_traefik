@@ -8,6 +8,7 @@ A demo project that replicates the [`nginx-auth-request`](https://github.com/ric
 ├── nginx/ # Nginx app route request to auth
 ├── traefik/ # Traefik Helm chart
 ├── webui/ # Simple frontend with form to test auth
+├── k8s/ # all k8s components
 
 ## Prerequisites
 - Docker v27.5.1 installed and running
