@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 VALID_TOKEN = "valid-token"
 
-@app.route('/auth')
+@app.route('/auth', methods=['GET', 'POST'])
 def auth():
     app.logger.info(f"Processing request to /auth")
     # Get the x-pretest header from the request
@@ -22,7 +22,7 @@ def auth():
         return Response(status=401)
 
 
-@app.route('/health')
+@app.route('/health', methods=['GET', 'POST'])
 def health_check():
     """Simple health check endpoint"""
     return "Auth service is running\n", 200
