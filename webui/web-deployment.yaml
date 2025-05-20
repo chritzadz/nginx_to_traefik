@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: webui
-          image: chritzadz/webui:v0.0.1
+          image: chritzadz/webui:v0.0.2
           ports:
             - containerPort: 80
 ---
