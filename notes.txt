@@ -26,7 +26,7 @@ steps:
 2. using Ingress CRD forward to appropriate services
 3. port-forward traefik services externally -> kubectl port-forward -n traefik pod/traefik 8001:8000
 
-port 8000 is used for 
-
+port 8000 is used for web (http req)
+port 8080 is used for the traefik dashboard
 
 
