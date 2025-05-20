@@ -13,16 +13,15 @@ metadata:
   name: nginx-ingress
   annotations:
     kubernetes.io/ingress.class: "traefik"
-    traefik.ingress.kubernetes.io/router.middlewares: default-stripprefix@kubernetescrd
 spec:
   rules:
     - host: localhost
       http:
         paths:
-          - path: /auth-prefix
+          - path: /
             pathType: Prefix
             backend:
               service:
-                name: nginx-service
+                name: webui-service
                 port:
                   number: 80
